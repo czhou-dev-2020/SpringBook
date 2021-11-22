@@ -38,19 +38,19 @@ This project is intended to:
 3.3.1 Markdown text file (.md)  
 3.3.2 Restuctured text file (.rst)
 
-### 3.4 Integrated Development Environment (IDE)
-3.4.1 IntelliJ IDEA Community Edition (ver: 2021.2)
-        (https://www.jetbrains.com/idea/)
-3.4.2 DbSchema (ver: 8.4.3)
-        (https://dbschema.com/)
+### 3.4 Integrated Development Environment (IDE)  
+3.4.1 IntelliJ IDEA Community Edition (ver: 2021.2)  
+        (https://www.jetbrains.com/idea/)  
+3.4.2 DbSchema (ver: 8.4.3)  
+        (https://dbschema.com/)  
 
 ### 3.5 Repositories
-3.5.1 Online version on github.com 
-        (No DB scripts, No certifications, No toolbox)
-3.5.2 Local copy of full version
-
-Email: czhou_dev_2020@yeah.net 
-(Please send email to me if you are also interested in this project.)
+3.5.1 Online version on github.com  
+        (No DB scripts, No certifications, No toolbox)  
+3.5.2 Local copy of full version  
+  
+Email: czhou_dev_2020@yeah.net  
+(Please send email to me if you are also interested in this project.)  
 
 ## Community Support
 
