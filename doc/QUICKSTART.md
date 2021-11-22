@@ -58,22 +58,22 @@ Added Later
 3.4 project start demo
 
 3.4.1 Home
-![Project Home](images/2021-11-23/home.png)
+![Project Home](/doc/images/2021-11-23/home.png)
 
 3.4.2 Roles
-![User Roles](images/2021-11-23/roles.png)
+![User Roles](/doc/images/2021-11-23/roles.png)
 
 3.4.3 Groups
-![User Groups](images/2021-11-23/groups.png)
+![User Groups](/doc/images/2021-11-23/groups.png)
 
 3.4.4 Categories
-![Product Categories](images/2021-11-23/categories.png)
+![Product Categories](/doc/images/2021-11-23/categories.png)
 
 3.4.5 User Profile 1
-![User Profile 1](images/2021-11-23/profile01.png)
+![User Profile 1](/doc/images/2021-11-23/profile01.png)
 
 3.4.6 User Profile 2
-![User Profile 2](images/2021-11-23/profile02.png)
+![User Profile 2](/doc/images/2021-11-23/profile02.png)
 
 ## Code Structure
 
