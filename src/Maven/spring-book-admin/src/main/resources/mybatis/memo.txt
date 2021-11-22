@@ -1,0 +1,47 @@
+// added in AuthUsersMapper.java
+// -----------------------------
+      // added by crane zhou on 2021.09.29
+      AuthUsers selectByUsername(String strUsername);
+      List<AuthUsers> selectByFullname(String strFullname);
+
+// added in AuthUsersMapper.xml
+// ----------------------------
+  <!-- added by Crane Zhou on 09.29.2021 -->
+  <select id="selectByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, username, password, fullname, user_email, user_phone, last_login, date_joined,
+    user_status, role_id, role_name, group_id, group_name, city_id, city_name, remark
+    from tbl_auth_users
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByFullname" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, username, password, fullname, user_email, user_phone, last_login, date_joined,
+    user_status, role_id, role_name, group_id, group_name, city_id, city_name, remark
+    from tbl_auth_users
+    where fullname like #{fullname,jdbcType=VARCHAR}
+  </select>
+
+// added in SecurityAuthUsers.java
+// -------------------------------
+    // added by crane zhou on 10.20.2021
+    public SecurityAuthUsers(AuthUsers theUser)
+    {
+        if (theUser != null)
+        {
+            this.setId(theUser.getId());
+            this.setUsername(theUser.getUsername());
+            this.setPassword(theUser.getPassword());
+            this.setFullname(theUser.getFullname());
+            this.setUserEmail(theUser.getUserEmail());
+            this.setUserPhone(theUser.getUserPhone());
+            this.setLastLogin(theUser.getLastLogin());
+            this.setDateJoined(theUser.getDateJoined());
+            this.setUserStatus(theUser.getUserStatus());
+            this.setRoleId(theUser.getRoleId());
+            this.setRoleName(theUser.getRoleName());
+            this.setGroupId(theUser.getGroupId());
+            this.setGroupName(theUser.getGroupName());
+            this.setCityId(theUser.getCityId());
+            this.setCityName(theUser.getCityName());
+            this.setRemark(theUser.getRemark());
+        }
+    }

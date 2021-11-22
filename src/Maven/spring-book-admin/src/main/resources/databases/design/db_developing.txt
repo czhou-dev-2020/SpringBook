@@ -1,0 +1,54 @@
+Database design in draft
+by crane zhou on 2021.07.30, 2021.08.02
+by crane zhou on 2021.09.06
+
+by crane zhou on 2021.10.20
+
+Database Name:
+--------------
+spring-book-admin-db-dev
+
+spring_book_admin_db_dev
+
+Master Table
+------------
+
+tbl_auth_users
+tbl_auth_roles
+tbl_auth_user_roles
+
+tbl_auth_groups
+tbl_auth_user_groups
+
+tbl_goods_category
+tbl_goods_products
+tbl_goods_resource
+
+tbl_sites_city
+tbl_sites_park
+
+tbl_sites_store
+tbl_sites_stock
+
+tbl_auth_user_tokens        // by crane zhou on 2021.11.15
+
+------------------
+tbl_auth_group_roles
+tbl_store_products
+tbl_stock_products
+
+by crane zhou on 2021.10.27
+------------------
+tbl_auth_group_roles
+tbl_store_products
+tbl_stock_products
+
+by crane zhou on 2021.10.27
+
+by crane zhou on 2021.11.03
+ALTER TABLE spring_book_admin_db_dev.tbl_auth_roles MODIFY role_code varchar(32) AFTER role_name COMMENT "角色代码"
+
+
+SELECT A.*, B.role_name, B.role_code FROM tbl_auth_user_roles AS A, tbl_auth_roles AS B WHERE A.role_id = B.id
+SELECT A.*, B.role_name, B.role_code FROM tbl_auth_user_roles AS A, tbl_auth_roles AS B WHERE A.role_id = B.id AND A.user_id = 2001
+SELECT A.*, B.role_name, B.role_code FROM tbl_auth_user_roles AS A LEFT JOIN tbl_auth_roles AS B ON A.role_id = B.id

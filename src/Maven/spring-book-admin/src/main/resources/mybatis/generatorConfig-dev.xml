@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <properties resource="mybatis/generatorConfig.properties"/>
+<!--
+    <classPathEntry location="/home/cranez/WorkSpace/Development/mavenware/repository/org/mariadb/jdbc/mariadb-java-client/2.7.4/mariadb-java-client-2.7.4.jar" />
+-->
+    <context id="simple" targetRuntime="MyBatis3Simple">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+        <commentGenerator>
+            <property name="javaFileEncoding" value="UTF-8"/>
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${mybatis.driverClassName}"
+                        connectionURL="${mybatis.url}" userId="${mybatis.username}" password="${mybatis.password}">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.rillsoft.springbookadmin.model" targetProject="src/main/java">
+            <property name="constructorBased" value="true" />
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.rillsoft.springbookadmin.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table schema="spring_book_admin_db_dev" tableName="tbl_auth_groups" domainObjectName="AuthGroups"/>
+
+        <!--
+        <table schema="spring_book_admin_db_dev" tableName="tbl_auth_users" domainObjectName="AuthUsers"/>
+        <table schema="spring_book_admin_db_dev" tableName="tbl_auth_roles" domainObjectName="AuthRoles"/>
+        <table schema="spring_book_admin_db_dev" tableName="tbl_auth_user_roles" domainObjectName="AuthUserRoles"/>
+
+        <table schema="spring_book_admin_db_dev" tableName="tbl_auth_groups" domainObjectName="AuthGroups"/>
+        <table schema="spring_book_admin_db_dev" tableName="tbl_auth_user_groups" domainObjectName="AuthUserGroups"/>
+        -->
+        <!--
+        <table schema="spring_book_admin_db_dev" tableName="tbl_goods_category" domainObjectName="GoodsCategory"/>
+        -->
+
+<!--
+        <table schema="spring_book_admin_db_dev" tableName="tbl_sites_store" domainObjectName="AuthSitesStore"/>
+        <table schema="spring_book_admin_db_dev" tableName="tbl_sites_stock" domainObjectName="AuthSitesStock"/>
+-->
+    </context>
+</generatorConfiguration>

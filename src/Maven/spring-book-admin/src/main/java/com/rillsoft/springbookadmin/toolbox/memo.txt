@@ -1,0 +1,33 @@
+cd /home/cranez/Projects/RillSoft/TestProjects/VscodeProjects/stack-po-admin-project/src/main/java/com/rillsoft/stackpoadmin/utils
+
+javac -d target ShiroSimpleHash.java -cp shiro-core-1.8.0.jar
+java -cp target:shiro-core-1.8.0.jar com.rillsoft.statckpoadmin.utils.ShiroSimpleHash
+
+by crane zhou on 2021.09.13
+
+javac -d target RSA.java
+javac -d target RSASign.java
+
+java -cp target com.rillsoft.springbookadmin.toolbox.RSA
+java -cp target com.rillsoft.springbookadmin.toolbox.RSASign
+
+javac -d target ShiroSimpleHash.java -cp ~/WorkSpace/Development/mavenware/repository/org/apache/shiro/shiro-core/1.8.0/shiro-core-1.8.0.jar
+java -cp target:/home/cranez/WorkSpace/Development/mavenware/repository/org/apache/shiro/shiro-core/1.8.0/shiro-core-1.8.0.jar com.rillsoft.springbookadmin.toolbox.ShiroSimpleHash
+java -cp ~/WorkSpace/Development/mavenware/repository/org/apache/shiro/shiro-core/1.8.0/shiro-core-1.8.0.jar:target com.rillsoft.springbookadmin.toolbox.ShiroSimpleHash
+java -cp libs/shiro-core-1.8.0.jar:target com.rillsoft.springbookadmin.toolbox.ShiroSimpleHash
+
+javac -d target SHA.java
+java -cp target com.rillsoft.springbookadmin.toolbox.SHA
+
+javac -d target MD5.java
+java -cp target com.rillsoft.springbookadmin.toolbox.MD5
+
+
+javac -d target BCrypt.java -cp ~/WorkSpace/Development/mavenware/repository/org/springframework/security/spring-security-crypto/5.5.1/spring-security-crypto-5.5.1.jar
+java -cp libs/spring-security-crypto-5.5.1.jar:libs/commons-logging-1.2.jar:target com.rillsoft.springbookadmin.toolbox.BCrypt
+
+http://commons.apache.org/proper/commons-logging/download_logging.cgi
+?? java -cp ~/WorkSpace/Development/mavenware/repository/org/springframework/security/spring-security-crypto/5.5.1/spring-security-crypto-5.5.1.jar:target com.rillsoft.springbookadmin.toolbox.BCrypt
+
+by crane zhou on 2021.09.15
+

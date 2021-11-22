@@ -1,0 +1,65 @@
+          "processing": true,
+          "serverSide": true,
+
+          "ajax": {
+              "url": "/admin/roles",
+              "type": "POST",
+              "dataType": "json",
+              "contentType": "application/json",
+          },
+
+         [{"id":101,"roleName":"Administrator","roleStatus":1,"remark":null},{"id":102,"roleName":"Normal User","roleStatus":1,"remark":null},{"id":103,"roleName":"Guest User","roleStatus":1,"remark":null},{"id":104,"roleName":"Regular User (Contract)","roleStatus":1,"remark":null},{"id":105,"roleName":"Super User (VIP)","roleStatus":1,"remark":null},{"id":106,"roleName":"Super Guest User","roleStatus":1,"remark":null},{"id":201,"roleName":"Employee","roleStatus":1,"remark":null},{"id":202,"roleName":"Manager","roleStatus":1,"remark":null},{"id":203,"roleName":"Director","roleStatus":1,"remark":null},{"id":204,"roleName":"Vice President","roleStatus":1,"remark":null},{"id":205,"roleName":"President (CEO)","roleStatus":1,"remark":null},{"id":206,"roleName":"CTO","roleStatus":1,"remark":null},{"id":207,"roleName":"CFO","roleStatus":1,"remark":null},{"id":208,"roleName":"COO","roleStatus":1,"remark":null},{"id":301,"roleName":"Business Leader","roleStatus":1,"remark":null},{"id":302,"roleName":"Buesiness Developer (BD)","roleStatus":1,"remark":null}]
+
+
+         <script th:inline="javascript">
+
+$(document).ready(function () {
+
+    $('#example').DataTable({
+        "searching": true,
+        "serverSide":false,
+        "paging":true,
+        "sAjaxSource":"${employeeList}",
+        "columns": [
+            {"data": "name"},
+            {"data": "designation"},
+            {"data": "salary"},
+            {"data": "country"}
+        ]
+
+    })
+});
+
+// added by crane zhou on 2021.10.25
+// Refer to:
+// https://datatables.net/examples/data_sources/js_array.html
+// var rolesListData = ${rolesList};
+//var rolesListData = [
+//    [
+//        "101",
+//        "System Architect",
+//        "1",
+//        "Remark"
+//    ],
+//    [
+//        "102",
+//        "Director",
+//        "1",
+//        "Remark"
+//    ]
+//];
+// var rolesListData = [];
+$(document).ready(function() {
+//  console.log(rolesListData);
+  $('#dataTableRoles').DataTable(
+  {
+          "data": rolesListData,
+          "columns": [
+              {"title": "id", "width": "20%"},
+              {"title": "Role Name","width": "30%"},
+              {"title": "Role Status", "width": "20%"},
+              {"title": "Remark", "width": "30%"},
+          ]
+  }
+  );
+});

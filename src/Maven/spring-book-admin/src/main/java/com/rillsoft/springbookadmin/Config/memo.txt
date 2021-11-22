@@ -1,0 +1,105 @@
+// defined in WebSecurityConfig, but not used yet
+// moved from WebSecurityConfig.java by crane zhou on 2021.10.13
+
+//        		.csrf().disable() // close CSRF
+//        		.csrf().requireCsrfProtectionMatcher(new RequestMatcher() {
+//	        	@Override
+//	        	public boolean matches(HttpServletRequest httpServletRequest) {
+//	        		String servletPath = httpServletRequest.getServletPath();
+//	        		if (servletPath.contains("/druid")) {
+//	        			return false;
+//	        		}
+//	        		return true;
+//	        		}
+//	        	}).and()
+
+//    @Bean
+//    @Override
+//    public UserDetailsService userDetailsService() {
+//        UserDetails user = User.withUsername("user")
+//                .password("{bcrypt}$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HZWzG3YB1tlRy.fqvM/BG")
+//                .roles("USER")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(user);
+//    }
+
+//        UserDetails user =
+//                User.withDefaultPasswordEncoder()
+//                        .username("user")
+//                        .password("password")
+//                        .roles("USER")
+//                        .build();
+    // Refer to:
+    // https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/core/userdetails/
+    //          User.html#withUserDetails(org.springframework.security.core.userdetails.UserDetails)
+    // User.withDefaultPasswordEncoder() is Deprecated.
+    // Using this method is not considered safe for production, but is acceptable for demos and getting started.
+
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//    	PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//    	auth
+//          .inMemoryAuthentication()
+//          .withUser("user")
+//          .password(encoder.encode("password"))
+//          .roles("USER")
+//          .and()
+//          .withUser("admin")
+//          .password(encoder.encode("admin"))
+//          .roles("USER", "ADMIN");
+//    }
+//
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http
+//          .authorizeRequests()
+//          .anyRequest()
+//          .authenticated()
+//          .and()
+//          .httpBasic();
+//    }
+
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//        auth.inMemoryAuthentication()
+//                .passwordEncoder(encoder)
+//                .withUser("spring")
+//                .password(encoder.encode("secret"))
+//                .roles("USER");
+//    }
+//
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http.authorizeRequests()
+//                .antMatchers("/private/**")
+//                .authenticated()
+//                .antMatchers("/public/**")
+//                .permitAll()
+//                .and()
+//                .httpBasic();
+//    }
+
+		<!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.0.3.RELEASE</version>
+        </dependency>
+        -->
+
+        https://zhangzw.com/posts/20200815.html
+
+// defined in MvcConfig, but not used yet
+// moved from MvcConfig.java by crane zhou on 2021.10.18
+
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/resources/**")
+//                .addResourceLocations("/resources", "classpath:/static/");
+////                .setCacheControl(CacheControl.maxAge(Duration.ofDays(365)));
+////        registry.addResourceHandler("/js/**").addResourceLocations("classpath:/static/js/");
+////        registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
+////        registry.addResourceHandler("/assets/**").addResourceLocations("classpath:/static/assets/");
+//    }

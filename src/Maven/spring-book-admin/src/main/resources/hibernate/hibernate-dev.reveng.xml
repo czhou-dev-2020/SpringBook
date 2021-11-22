@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering
+        SYSTEM "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+<hibernate-reverse-engineering>
+
+    <schema-selection match-schema="spring_book_admin_db_dev" match-table="tbl_sites_store" />
+    <schema-selection match-schema="spring_book_admin_db_dev" match-table="tbl_sites_stock" />
+
+    <!--
+    <schema-selection match-schema="spring_book_admin_db_dev" match-table="tbl_sites_stock" class="SitesStock"/>
+        <table catalog="mariadb" schema="spring_book_admin_db_dev" name="tbl_sites_store" class="SitesStore" />
+
+    <schema-selection match-schema="spring_book_admin_db_dev">
+        <table name="tbl_sites_store" class="SitesStore" />
+        <table name="tbl_sites_stock" class="SitesStock" />
+    </schema-selection>
+    -->
+</hibernate-reverse-engineering>

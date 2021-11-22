@@ -1,0 +1,41 @@
+window.addEventListener('DOMContentLoaded', event => {
+    // Simple-DataTables
+    // https://github.com/fiduswriter/Simple-DataTables/wiki
+//    var rolesListData = {
+//	"headings": [
+//		"ID",
+//		"Role Name",
+//		"Role Status",
+//		"Remark"
+//	],
+//	"data": [
+//		[
+//			"101",
+//			"Administrator",
+//			"1",
+//			""
+//		],
+//		[
+//			"102",
+//			"Normal User",
+//			"1",
+//			""
+//		]
+//	]};
+//    var rolesListData = ${rolesList};
+    const datatablesSimple = document.getElementById('datatablesRoles');
+    if (datatablesRoles) {
+        new simpleDatatables.DataTable(datatablesRoles, {
+//            data: rolesListData
+              ajax: "/admin/roles"
+//              "ajax": {
+//                  "url": "/admin/roles",
+//                  "type": "GET",
+//                  "dataType": "json",
+//                  "contentType": "application/json",
+//                  "data": function (d) {
+//                      return JSON.stringify(d);
+//                  }
+        });
+    }
+});

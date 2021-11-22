@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+        <title>Spring Book Admin (Demo ver 0.1)</title>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.min.js@3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+    <!--
+        <h1>Welcome!</h1>
+    -->
+        <h1 th:text="#{welcome.message}"></h1>
+
+        <span th:text="#{language.change}"></span>:
+        <select id="locales">
+            <option value=""></option>
+            <option value="eng" th:text="#{lang.eng}"></option>
+            <option value="de" th:text="#{lang.de}"></option>
+            <option value="zh" th:text="#{lang.zh}"></option>
+        </select>
+
+        <p>Click <a th:href="@{/home}">here</a> to see a greeting.</p>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("#locales").change(function () {
+            var selectedOption = $('#locales').val();
+            if (selectedOption != '') {
+                window.location.replace('?lang=' + selectedOption);
+            }
+        });
+    });
+    </script>
+
+    </body>
+</html>

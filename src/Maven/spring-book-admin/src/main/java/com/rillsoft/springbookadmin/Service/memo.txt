@@ -1,0 +1,12 @@
+// defined in CustomDetailUserService, but not used yet
+// moved from CustomDetailUserService.java by crane zhou on 2021.10.13
+
+//            m_objLogger.info("strUsername:" + strUsername);
+//
+//            m_objLogger.info("Username:" + objSecurityAuthUsers.getUsername());
+//            m_objLogger.info("Password:" + objSecurityAuthUsers.getPassword());
+//
+//            BCryptPasswordEncoder objPasswordEncoder = new BCryptPasswordEncoder();
+//            m_objLogger.info("objPasswordEncoder.encode:" + objPasswordEncoder.encode("password"));
+//            m_objLogger.info("matched result:" + objPasswordEncoder.matches("password",
+//                    objSecurityAuthUsers.getPassword()));

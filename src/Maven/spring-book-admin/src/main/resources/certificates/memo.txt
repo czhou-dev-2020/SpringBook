@@ -1,0 +1,11 @@
+by crane zhou on 2021.09.12
+https://mariadb.com/kb/en/securing-connections-for-client-and-server/
+https://mariadb.com/kb/en/certificate-creation-with-openssl/
+
+https://mariadb.com/kb/en/configuring-mariadb-with-option-files/
+
+https://mariadb.com/kb/en/certificate-creation-with-openssl/
+
+http://mariadb.com/kb/en/alter-user/
+
+https://www.osradar.com/configure-mariadb-with-ssl-to-secure-connections/

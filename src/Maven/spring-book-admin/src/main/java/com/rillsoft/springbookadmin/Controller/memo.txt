@@ -1,0 +1,133 @@
+// moved from RegisterController.jav file
+// by crane zhou on 2021.11.15
+// (debug the issue of th:if="${#fields.hasErrors('*')}" and ${#fields.errors('*')},
+//    later if I have more time)
+//
+
+// moved from register.html file
+
+                                                        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" th:style="'color:red'"></span>
+
+                                                    <!--
+                                                    <input type="text" th:field="*{fullname}" />
+                                                    <p th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}">Incorrect date</p>
+                                                    -->
+
+                                            <!-- <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}"> -->
+                                                <span th:text="${testRegister}"></span>
+                                           <!-- </div> -->
+                                            <!--
+                                            <div class="alert alert-danger">
+                                                <ul th:if="${#fields.hasErrors('*')}">
+                                                    <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+                                                </ul>
+                                                <p th:if="${#fields.hasErrors('all')}" th:errors="*{all}">Incorrect date</p>
+                                            </div>
+                                            -->
+
+                                            <!-- <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}"> -->
+                                            <div>
+                                                <!--
+                                                <span th:text="${testRegister}"></span>
+                                                <input type="text" th:field="*{username}" th:errorclass="fieldError" />
+                                                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Incorrect input</p>
+                                                -->
+                                                <input type="text" th:field="*{username}"
+                                                       th:class="${#fields.hasErrors('username')}? fieldError" />
+                                            </div>
+
+// moved from RegisterController.java file
+////    @GetMapping
+//    @RequestMapping(value = {"/register", "/registerPage"}, method= RequestMethod.GET)
+//    public String register(final Model model) {
+//        model.addAttribute("theAuthUserData", new AuthUsers());
+////        model.addAttribute("theAuthUserData", theAuthUser);
+//        return "/register";
+//    }
+//
+////    @PostMapping
+//    @RequestMapping(value = {"/register"}, method= RequestMethod.POST)
+//    public String userRegistration(final @Valid AuthUsers theAuthUser, final BindingResult bindingResult, final Model model) {
+////    public String userRegistration(final AuthUsers theAuthUser, final BindingResult bindingResult, final Model model) {
+//        if (bindingResult.hasErrors()) {
+//
+////            model.addAttribute("registrationForm", theAuthUser);
+////            model.addAttribute("theAuthUserData", theAuthUser);
+//
+//            m_objLogger.info("bindingResult.count=" + bindingResult.getFieldErrorCount());
+//            m_objLogger.info("theAuthUser.getUsername()=", theAuthUser.getUsername());
+//            m_objLogger.info("theAuthUser.getFullname()=", theAuthUser.getFullname());
+//
+//            return "/register";
+//        }
+//
+//        AuthUsers objAuthUser = m_objRegisterAuthUserService.selectByUsername("admin");
+//
+////        try {
+////            userService.register(userData);
+////        }catch (UserAlreadyExistException e){
+////            bindingResult.rejectValue("email", "userData.email","An account already exists for this email.");
+////            model.addAttribute("registrationForm", userData);
+////            return "account/register";
+////        }
+////        model.addAttribute("registrationMsg", messageSource.getMessage("user.registration.verification.email.msg", null, LocaleContextHolder.getLocale()));
+////        return "account/register";
+//        model.addAttribute("theAuthUserData", theAuthUser);
+//        model.addAttribute("registrationMessage", m_objMessageSource.getMessage("registration.verification.email.msg", null, LocaleContextHolder.getLocale()));
+//        return "/register";
+//    }
+
+//    @RequestMapping(value = {"/register", "/registerPage"}, method= RequestMethod.GET)
+////    public String registerAuthUsers(final Model theModel) {
+//    public ModelAndView register() {
+////        final
+//        ModelAndView modelAndView = new ModelAndView("/register");
+//
+////        theModel.addAttribute("theAuthUserData", new AuthUsers());
+////        return "/register";
+//        AuthUsers objAuthUser = new AuthUsers();
+//        modelAndView.addObject("theAuthUserData", new AuthUsers());
+//
+//        m_objLogger.info("objAuthUser.getUsername() = " + objAuthUser.getUsername());
+//        return modelAndView;
+//    }
+//
+//
+////    @PostMapping("/register")
+////    public String registerAuthUsers(final @Valid AuthUsers theAuthUser, final BindingResult bindingResult, final Model theModel) {
+//    @RequestMapping(value = "/register", method= RequestMethod.POST)
+//    public ModelAndView registerAuthUsers(final @Valid @ModelAttribute("AuthUsers") AuthUsers theAuthUser, final BindingResult bindingResult) {
+////        final
+//        ModelAndView modelAndView = new ModelAndView("/register");
+//
+//        if (bindingResult.hasErrors()) {
+////            theModel.addAttribute("theAuthUserData", theAuthUser);
+//
+//            modelAndView.addObject("registrationForm", theAuthUser);
+//            modelAndView.addObject("testRegister", "testRegister:hasErrors():" + bindingResult.getFieldErrorCount());
+////            theModel.addAttribute("testRegister", "testRegister:hasErrors():" + bindingResult.getFieldErrorCount());
+////            m_objLogger.info("Code Debug -> OK here: bindingResult.hasErrors!");
+////            m_objLogger.info("bindingResult.count=" + bindingResult.getFieldErrorCount());
+////            m_objLogger.info("bindingResult.fieldError=" + bindingResult.getAllErrors().toString());
+//            return modelAndView;
+////            return "/register";
+//        }
+////        else
+////        {
+////            m_objLogger.info("bindingResult.hasErrors is false (no errors)");
+////        }
+////        try {
+////            userService.register(theAuthUser);
+////        }catch (UserAlreadyExistException e){
+////            bindingResult.rejectValue("email", "userData.email","An account already exists for this email.");
+////            theModel.addAttribute("registrationForm", userData);
+////            return "account/register";
+////        }
+////        theModel.addAttribute("theAuthUserData", theAuthUser);
+////        theModel.addAttribute("registrationMessage", m_objMessageSource.getMessage("registration.verification.email.msg", null, LocaleContextHolder.getLocale()));
+////        return "/register";
+//
+//        modelAndView.addObject("theAuthUserData", theAuthUser);
+//        modelAndView.addObject("registrationMessage", m_objMessageSource.getMessage("registration.verification.email.msg", null, LocaleContextHolder.getLocale()));
+//        return modelAndView;
+//    }

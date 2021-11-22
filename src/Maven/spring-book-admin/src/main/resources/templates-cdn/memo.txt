@@ -1,0 +1,22 @@
+The html files and bootstrap/ccs/js scripts in the ../templates-dev/ folder
+   are using the javascripts on the internet (cdn).
+
+We will try to use the local version in the LAN later if possible.
+
+by crane zhou on 2021.11.16
+
+Some html scripts from *.html files in the ../templates-dev/ folder.
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+<!--<link href="css/styles.css" rel="stylesheet" />-->
+<link th:href="@{/css/styles.css}" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+ ... ...
+ ... ...
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<!--<script src="js/scripts.js"></script>-->
+<script th:src="@{/js/scripts.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script th:src="@{/assets/demo/chart-area-demo.js}"></script>
+<script th:src="@{/assets/demo/chart-bar-demo.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+<script th:src="@{/js/datatables-simple-demo.js}"></script>

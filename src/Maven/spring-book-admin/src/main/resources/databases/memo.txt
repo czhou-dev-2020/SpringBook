@@ -1,0 +1,26 @@
+USE mysql;
+DESC user;
+
+SELECT Host, User, ssl_type FROM user;
+
+ALTER USER 'sba_sql_dbuser01'@'%'
+   REQUIRE NONE;
+ALTER USER 'sba_sql_dbuser01'@'localhost'
+   REQUIRE NONE;
+
+SHOW VARIABLES LIKE 'have_ssl';
+GRANT ALL PRIVILEGES ON spring_book_admin_db_dev.* TO 'sba_sql_dbuser01'@'localhost' REQUIRE SSL WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON spring_book_admin_db_dev.* TO 'sba_sql_dbuser01'@'%' REQUIRE SSL WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+SHOW GLOBAL VARIABLES LIKE 'tls_version';
+
+https://mariadb.com/kb/en/mysqldump/
+https://mariadb.com/products/skysql/docs/clients/mariadb-clients/mariadb-dump/
+
+# only db structure, without data
+mysqldump -d spring_book_admin_db_dev -u sba_sql_dbuser01 -p > spring_book_admin_db_dev_setup.sql
+# only data, no db structure
+mysqldump -t spring_book_admin_db_dev -u sba_sql_dbuser01 -p > spring_book_admin_db_dev_data.sql
+# db structure and data
+mysqldump spring_book_admin_db_dev -u sba_sql_dbuser01 -p > spring_book_admin_db_dev_all.sql

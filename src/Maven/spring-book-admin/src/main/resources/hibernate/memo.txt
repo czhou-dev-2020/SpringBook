@@ -1,0 +1,321 @@
+===============================================================================
+plugin:hibernate-version:5.5.7.Final
+			<plugin>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-tools-maven-plugin</artifactId>
+				<version>${hibernate-version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.mariadb.jdbc</groupId>
+						<artifactId>mariadb-java-client</artifactId>
+						<version>${mariadb-connector-version}</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>Display Help</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>help</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>entity-generation</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>hbm2java</goal>
+						</goals>
+						<configuration>
+							<!--
+							<templatePath>${project.basedir}/src/main/resources/templates/</templatePath>
+							-->
+							<ejb3>true</ejb3>
+							<!-- Defaults: -->
+							<!--<outputDirectory>${project.build.directory}/generated-sources/</outputDirectory>-->
+							<!--<ejb3>false</ejb3>-->
+							<!--<jdk5>false</jdk5>-->
+						</configuration>
+					</execution>
+					<execution>
+						<id>Schema generation</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>hbm2ddl</goal>
+						</goals>
+						<configuration>
+							<!-- Defaults:-->
+							<!--Possible targetType: SCRIPT (default), STDOUT, DATABASE-->
+							<!--<targetTypes>-->
+							<!--<param>SCRIPT</param>-->
+							<!--<param>STDOUT</param>-->
+							<!--<param>DATABASE</param>-->
+							<!--</targetTypes>-->
+							<!--<outputDirectory>${project.build.directory}/generated-resources/</outputDirectory>-->
+							<!--Possible schemaExportAction: CREATE (default), DROP, BOTH-->
+							<!--<schemaExportAction>CREATE</schemaExportAction>-->
+							<!--<outputFileName>schema.ddl</outputFileName>-->
+							<!--<delimiter>;</delimiter>-->
+							<!--<haltOnError>true</haltOnError>-->
+							<!--<format>true</format>-->
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<propertyFile>src/main/resources/hibernate/hibernate.properties</propertyFile>
+					<packageName>com.rillsoft.springbookadmin</packageName>
+					<revengFile>src/main/resources/hibernate/hibernate.reveng.xml</revengFile>
+
+					<!--
+					<revengFile>${project.basedir}/src/main/hibernate/hibernate.reveng.xml</revengFile>
+					-->
+					<!-- Defaults:-->
+					<!--<packageName></packageName>-->
+					<!--<configFile>${project.basedir}/src/main/hibernate/hibernate.cfg.xml</configFile>-->
+					<!--<detectManyToMany>true</detectManyToMany>-->
+					<!--<detectOneToOne>true</detectOneToOne>-->
+					<!--<detectOptimisticLock>true</detectOptimisticLock>-->
+					<!--<createCollectionForForeignKey>true</createCollectionForForeignKey>-->
+					<!--<createManyToOneForForeignKey>true</createManyToOneForForeignKey>-->
+				</configuration>
+			</plugin>
+-------------------------------------------------------------------------------
+by crane zhou on 2021.10.07
+===============================================================================
+hibernate3-maven-version:2.2
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>hibernate3-maven-plugin</artifactId>
+				<version>${hibernate3-maven-version}</version>
+				<configuration>
+					<components>
+						<component>
+							<name>hbm2hbmxml</name>
+							<implementation>jdbcconfiguration</implementation>
+							<outputDirectory>src/main/java/mapper</outputDirectory>
+						</component>
+						<component>
+							<name>hbm2java</name>
+							<implementation>jdbcconfiguration</implementation>
+							<outputDirectory>src/main/java/model</outputDirectory>
+						</component>
+					</components>
+					<componentProperties>
+						<revengfile>src/main/resources/hibernate/reveng.xml</revengfile>
+						<propertyfile>src/main/resources/hibernate/hibernate.properties</propertyfile>
+						<packagename>com.rillsoft.springbookadmin</packagename>
+						<!-- <jdk5>true</jdk5> -->
+						<ejb3>true</ejb3>
+					</componentProperties>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-core</artifactId>
+							<version>3.6.0.Final</version>
+						</dependency>
+						<dependency>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-entitymanager</artifactId>
+							<version>3.6.0.Final</version>
+						</dependency>
+						<dependency>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-validator</artifactId>
+							<version>4.1.0.Final</version>
+						</dependency>
+						<dependency>
+							<groupId>org.mariadb.jdbc</groupId>
+							<artifactId>mariadb-java-client</artifactId>
+							<version>${mariadb-connector-version}</version>
+							<scope>runtime</scope>
+						</dependency>
+				</dependencies>
+			</plugin>
+-------------------------------------------------------------------------------
+by crane zhou on 2021.10.07
+===============================================================================
+plugin:hibernate-version:6.0.0-SNAPSHOT/5.3.5-SNAPSHOT
+			<plugin>
+<!--
+				<groupId>org.hibernate.tool</groupId>
+				<artifactId>hibernate-tools-maven</artifactId>
+				<version>6.0.0-SNAPSHOT</version>
+-->
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-tools-maven-plugin</artifactId>
+				<version>5.3.5-SNAPSHOT</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-core</artifactId>
+						<version>${hibernate-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-tools</artifactId>
+						<version>${hibernate-version}</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>entity-generation</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>hbm2java</goal>
+						</goals>
+						<configuration>
+							<ejb3>true</ejb3>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+-------------------------------------------------------------------------------
+by crane zhou on 2021.10.07
+===============================================================================
+
+			<plugin>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-tools-maven-plugin</artifactId>
+				<version>5.3.5-SNAPSHOT</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-tools</artifactId>
+						<version>5.3.5-SNAPSHOT</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+                        <!--
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>hibernate3-maven-plugin</artifactId>
+                            <version>${hibernate3-maven-version}</version>
+                            <configuration>
+                                <components>
+                                    <component>
+                                        <name>hbm2hbmxml</name>
+                                        <implementation>jdbcconfiguration</implementation>
+                                        <outputDirectory>src/main/java/mapper</outputDirectory>
+                                    </component>
+                                    <component>
+                                        <name>hbm2java</name>
+                                        <implementation>jdbcconfiguration</implementation>
+                                        <outputDirectory>src/main/java/model</outputDirectory>
+                                    </component>
+                                </components>
+                                <componentProperties>
+                                    <revengfile>src/main/resources/hibernate/reveng.xml</revengfile>
+                                    <propertyfile>src/main/resources/hibernate/hibernate.properties</propertyfile>
+                                    <packagename>com.rillsoft.springbookadmin</packagename>
+                                    -->
+						<!-- <jdk5>true</jdk5> -->
+<!--
+						<ejb3>true</ejb3>
+					</componentProperties>
+				</configuration>
+				<dependencies>
+						<dependency>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-core</artifactId>
+							<version>3.6.0.Final</version>
+						</dependency>
+						<dependency>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-entitymanager</artifactId>
+							<version>3.6.0.Final</version>
+						</dependency>
+						<dependency>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-validator</artifactId>
+							<version>4.1.0.Final</version>
+						</dependency>
+						<dependency>
+							<groupId>org.mariadb.jdbc</groupId>
+							<artifactId>mariadb-java-client</artifactId>
+							<version>${mariadb-connector-version}</version>
+							<scope>runtime</scope>
+						</dependency> -->
+<!--
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-tools</artifactId>
+						<version>${hibernate-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-core</artifactId>
+						<version>${hibernate-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-entitymanager</artifactId>
+						<version>4.2.1.Final</version>
+					</dependency>
+-->
+<!--
+				</dependencies>
+			</plugin>
+-->
+<!--
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>3.0.0-M5</version>
+			</plugin>
+-->
+<!--
+			<plugin>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-tools-maven-plugin</artifactId>
+				<version>${hibernate-version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-tools</artifactId>
+						<version>${hibernate-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-core</artifactId>
+						<version>${hibernate-version}</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>entity-generation</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>hbm2java</goal>
+						</goals>
+						<configuration>
+							<ejb3>true</ejb3>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+-->
+
+
+						<!--
+                                            <dependency>
+                                                <groupId>org.hibernate</groupId>
+                                                <artifactId>hibernate-tools</artifactId>
+                                                <version>${hibernate-version}</version>
+                                            </dependency>
+                                            <dependency>
+                                                <groupId>org.hibernate</groupId>
+                                                <artifactId>hibernate-core</artifactId>
+                                                <version>${hibernate-version}</version>
+                                            </dependency>
+                                            <dependency>
+                                                <groupId>org.hibernate</groupId>
+                                                <artifactId>hibernate-entitymanager</artifactId>
+                                                <version>4.2.1.Final</version>
+                                            </dependency>
+                        -->
